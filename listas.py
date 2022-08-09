@@ -60,3 +60,53 @@ for i in range(5):
 
 print(my_list)
 
+#Calcular la  SUMA de todos los valores almacenados en la lista my_list.
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total)
+
+
+
+#segundo aspecto de for
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in my_list:
+    total += i
+
+print(total)
+
+
+#Pregunta: ¿Cómo se pueden intercambiar los valores de dos variables?
+
+variable_1 = 1
+variable_2 = 2
+
+variable_1, variable_2 = variable_2, variable_1
+
+#Imagina que necesitas reorganizar los elementos de una lista, es decir, revertir el orden de los elementos: 
+#el primero y el quinto, así como el segundo y cuarto elementos serán intercambiados. El tercero permanecerá intacto.
+
+my_list = [10, 1, 8, 3, 5]
+
+my_list[0], my_list[4] = my_list[4], my_list[0]
+my_list[1], my_list[3] = my_list[3], my_list[1]
+
+print(my_list)
+
+#FUNCIONA CON MAS DE 100 ELEMENTOS? MM
+#UTILIZAMOS EL BUCLE FOR PARA ESO ;)
+
+my_list = [10, 1, 8, 3, 5]
+length = len(my_list)
+#Hemos asignado la variable length a la longitud de la lista actual (esto hace que nuestro código sea un poco más claro y más corto).
+for i in range(length // 2):  #(esto funciona bien para listas con longitudes pares e impares, porque cuando la lista contiene un número impar de elementos, el del medio permanece intacto)
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+#Hemos intercambiado el elemento i (desde el principio de la lista) por el que tiene un índice igual a (length-i-1) (desde el final de la lista);
+print(my_list)
+
+#en nuestro ejemplo, for i igual a 0 a la (length-i-1) da 4; for i igual a 3, da 3: esto es exactamente lo que necesitábamos
